@@ -60,5 +60,3 @@ services:
     image: ollama/ollama:0.3.11
     volumes:
       - "./data/ollama:/root/.ollama"
-    ports: 
-      - "11434:11434"
