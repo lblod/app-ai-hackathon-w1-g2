@@ -1,6 +1,21 @@
-from langchain_core.pydantic_v1 import BaseModel, Field
+from typing import List, Optional, Any
+
+from langchain_core.output_parsers import PydanticOutputParser
+from pydantic import BaseModel, Field
 
 
-# TODO: Make real output formats
-class MockOutput(BaseModel):
-    mock_var: str = Field(description="The output description")
+class Action(BaseModel):
+    """"Information about the extracted action"""
+    action: Optional[str] = Field(description="The complete text of an action")
+
+
+class AllowedAction(Action):
+    permit_needed: Optional[bool] = Field(description="Is a permit needed for this action")
+
+
+class Actions(BaseModel):
+    allowed_action_list: List[AllowedAction]
+    not_allowed_action_list: List[Action]
+
+
+output_parser= PydanticOutputParser(pydantic_object=Actions)
