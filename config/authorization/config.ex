@@ -22,6 +22,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/public",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://xmlns.com/foaf/0.1/Person"
                       ]
                     } } ] },
 

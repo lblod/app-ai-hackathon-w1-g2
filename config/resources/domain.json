@@ -1,7 +1,35 @@
 {
   "version": "0.1",
   "prefixes": {
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ex": "https://inventaris.onroerenderfgoed.be/"
   },
   "resources": {
+    "person": {
+      "class": "foaf:Person",
+      "attributes": {
+        "name": {
+          "type": "string",
+          "predicate": "foaf:name"
+        },
+        "age": {
+          "type": "number",
+          "predicate": "foaf:age"
+        }
+      },
+      "relationships": {
+        "knows": {
+          "target": "person",
+          "predicate": "foaf:knows",
+          "cardinality": "many"
+        }
+      },
+      "features": [
+        "include-uri"
+      ],
+      "new-resource-base": "http://data.lblod.info/id/person/"
+    }
   }
 }
