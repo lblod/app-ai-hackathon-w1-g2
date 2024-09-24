@@ -1,0 +1,109 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix oe: <https://id.erfgoed.net/vocab/ontology#> .
+@prefix oslo: <http://data.vlaanderen.be/ns/besluit#> .
+@prefix prov1: <http://www.w3.org/ns/prov/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix ext: <http://mu.semte.ch/vocabularies/ext/erfgoed> .
+@prefix measureType: <http://mu.semte.ch/vocabularies/ext/maatregeltypes/> .
+
+<https://id.erfgoed.net/besluiten/14767> a oslo:Besluit,
+        oe:Besluit ;
+    dcterms:hasPart <https://id.erfgoed.net/besluiten/14767/bestanden/23877>,
+        <https://id.erfgoed.net/besluiten/14767/bestanden/23878>,
+        <https://id.erfgoed.net/besluiten/14767/bestanden/23879>,
+        <https://id.erfgoed.net/besluiten/14767/bestanden/23880> ;
+    dcterms:identifier 14767 ;
+    dcterms:publisher [ a foaf:Person ;
+            dcterms:identifier "4" ;
+            foaf:name "Bourgeois, Geert"@und ] ;
+    dcterms:source <http://www.ejustice.just.fgov.be/cgi/summary_body.pl?language=nl&pub_date=2019-03-20> ;
+    dcterms:spatial [ a skos:Concept ;
+            dcterms:identifier 40000 ;
+            skos:prefLabel "Oost-Vlaanderen"@nl ] ;
+    dcterms:title "Architectenwoning Louis Hagen" ;
+    void:inDataset <https://id.erfgoed.net/datasets/besluiten> ;
+    skos:changeNote [ a prov1:Publish ;
+            prov1:startedAtTime "2019-02-26T13:29:16.659725+01:00"^^xsd:dateTime ;
+            prov1:wasAssociatedWith "https://id.erfgoed.net/actoren/2299" ],
+        [ a prov1:Modify ;
+            prov1:startedAtTime "2019-07-05T10:01:51.179794+02:00"^^xsd:dateTime ;
+            prov1:wasAssociatedWith "https://id.erfgoed.net/actoren/2299" ],
+        [ a prov1:Create ;
+            prov1:startedAtTime "2019-02-26T13:28:44.717273+01:00"^^xsd:dateTime ;
+            prov1:wasAssociatedWith "https://id.erfgoed.net/actoren/2299" ] ;
+    skos:editorialNote ""@nl ;
+    oe:besluit_handeltOver [ a oe:Aanduidingsobject ;
+            oe:aanduid_aanduidingstype <https://id.erfgoed.net/thesauri/aanduidingstypes/1> ] ;
+    oe:besluit_uitgevaardigdAls <https://id.erfgoed.net/thesauri/besluittypes/9> ;
+    oe:dateBetekend "2019-02-21"^^xsd:date ;
+    oe:dateSigned "2019-02-21"^^xsd:date ;
+    oe:precedes <https://id.erfgoed.net/besluiten/14850> ;
+    oe:rechtsgevolgen <https://id.erfgoed.net/thesauri/besluittypes/12> .
+
+<http://www.ejustice.just.fgov.be/cgi/summary_body.pl?language=nl&pub_date=2019-03-20> a bibo:Issue ;
+    dcterms:isPartOf [ a bibo:Periodical ;
+            dcterms:title "Belgisch Staatsblad"@nl ] ;
+    dcterms:issued "2019-03-20"^^xsd:date ;
+    bibo:issue 62 ;
+    bibo:volume 189 .
+
+
+<https://id.erfgoed.net/besluiten/14767/bestanden/23878> a bibo:LegalDocument,
+        oe:Attachment ;
+    dcterms:extent [ a dcterms:SizeOrDuration ;
+            rdfs:label "723648 B" ;
+            rdf:value 723648 ] ;
+    dcterms:format [ a dcterms:MediaType ;
+            rdf:value "application/pdf" ] ;
+    dcterms:title "14767.pdf" ;
+    dcterms:type [ dcterms:identifier 1 ;
+            dcterms:title "Besluit" ] .
+
+
+<https://id.erfgoed.net/besluiten/14767/bestanden/23878/measure/123> # The measure that is annotated - could also be a seperate resource
+   a oa:SpecificResource, ext:ProtectiveMeasure;
+   oa:hasSource <https://id.erfgoed.net/besluiten/14767/bestanden/23878>;
+   oa:hasSelector <https://id.erfgoed.net/besluiten/14767/bestanden/23878/selector/456>;
+   ext:hasMeasureType measureType:1.
+
+<https://id.erfgoed.net/besluiten/14767/bestanden/23878/selector/456>
+  a oa:TextQuoteSelector;
+  oa:exact "het plaatsen, slopen, verbouwen of heropbouwen van een constructie";
+  oa:prefix "abc";
+  oa:suffix "def".
+
+measureType:1
+  a ext:MeasureType, skos:Concept;
+  skos:prefLabel "Needs permit".
+
+measureType:2
+  a ext:MeasureType, skos:Concept;
+  skos:prefLabel "Allowed without permit".
+
+measureType:3
+  a ext:MeasureType, skos:Concept;
+  skos:prefLabel "Forbidden".
+
+measureType:measureTypes
+  a skos:ConceptScheme;
+  skos:hasTopConcept measureType:1, measureType:2, measureType:3;
+  skos:prefLabel "Measure types".
+
+<https://id.erfgoed.net/besluiten/14767/bestanden/23878/annotation/890>
+  a oa:Annotation;
+  oa:hasTarget <https://id.erfgoed.net/besluiten/14767/bestanden/23878/measure/123>.
+
+
+<https://id.erfgoed.net/besluiten/14767/bestanden/23879/annotationActivity>
+  a prov1:Activity, <https://www.w3.org/ns/activitystreams#Create>;
+  <https://data.vlaanderen.be/ns/slimmeraadpleegomgeving#Activiteit.genereertAnnotatie> <https://id.erfgoed.net/besluiten/14767/bestanden/23879/annotation/891>;
+  prov1:wasAssociatedWith <http://example/com/actor/hackathon-oe-ai>.
+
+
