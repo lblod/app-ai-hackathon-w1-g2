@@ -14,8 +14,8 @@ class AllowedAction(Action):
 
 
 class Actions(BaseModel):
-    allowed_action_list: List[AllowedAction]
-    not_allowed_action_list: List[Action]
+    allowed_action_list: Optional[List[AllowedAction]]
+    not_allowed_action_list: Optional[List[Action]]
 
 
 output_parser= PydanticOutputParser(pydantic_object=Actions)
