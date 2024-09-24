@@ -103,7 +103,7 @@ measureType:measureTypes
 
 <https://id.erfgoed.net/besluiten/14767/bestanden/23879/annotationActivity>
   a prov1:Activity, <https://www.w3.org/ns/activitystreams#Create>;
-  <https://data.vlaanderen.be/ns/slimmeraadpleegomgeving#Activiteit.genereertAnnotatie> <https://id.erfgoed.net/besluiten/14767/bestanden/23879/annotation/891>;
+  <https://data.vlaanderen.be/ns/slimmeraadpleegomgeving#Activiteit.genereertAnnotatie> <https://id.erfgoed.net/besluiten/14767/bestanden/23879/annotation/890>;
   prov1:wasAssociatedWith <http://example/com/actor/hackathon-oe-ai>.
 
 
