@@ -56,3 +56,7 @@ services:
       - ./data/files:/share
     labels:
       - "logging=true"
+  ollama:
+    image: ollama/ollama:0.3.11
+    volumes:
+      - "./data/ollama:/root/.ollama"
