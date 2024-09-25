@@ -1,0 +1,161 @@
+@prefix as: <https://www.w3.org/ns/activitystreams#> .
+@prefix besluit: <http://data.vlaanderen.be/ns/besluit#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix erfgoed: <https://id.erfgoed.net/vocab/ontology#> .
+@prefix ext: <http://mu.semte.ch/vocabularies/ext/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.w3.org/ns/prov/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sro: <https://data.vlaanderen.be/ns/slimmeraadpleegomgeving#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://besluiten.onroerenderfgoed.be/annotation-activity/0> a prov:Activity,
+        as:Create ;
+    prov:wasAssociatedWith <http://example/com/actor/hackathon-oe-ai> ;
+    sro:Activiteit_genereertAnnotatie <https://besluiten.onroerenderfgoed.be/annotation/0> .
+
+<https://besluiten.onroerenderfgoed.be/besluiten/14767/> erfgoed:hasAnnotation <https://besluiten.onroerenderfgoed.be/annotation/0> .
+
+<https://id.erfgoed.net/besluiten/14767> a besluit:Besluit,
+        erfgoed:Besluit ;
+    dcterms:hasPart <https://id.erfgoed.net/besluiten/14767/bestanden/23877>,
+        <https://id.erfgoed.net/besluiten/14767/bestanden/23878>,
+        <https://id.erfgoed.net/besluiten/14767/bestanden/23879>,
+        <https://id.erfgoed.net/besluiten/14767/bestanden/23880> ;
+    dcterms:identifier 14767 ;
+    dcterms:publisher <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b1> ;
+    dcterms:source <http://www.ejustice.just.fgov.be/cgi/summary_body.pl?language=nl&pub_date=2019-03-20> ;
+    dcterms:spatial <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b2> ;
+    dcterms:title "Architectenwoning Louis Hagen" ;
+    void:inDataset <https://id.erfgoed.net/datasets/besluiten> ;
+    skos:changeNote <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b3>,
+        <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b4>,
+        <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b5> ;
+    skos:editorialNote ""@nl ;
+    erfgoed:besluit_handeltOver <https://inventaris.onroerenderfgoed.be/aanduidingsobjecten/113477> ;
+    erfgoed:besluit_uitgevaardigdAls <https://id.erfgoed.net/thesauri/besluittypes/9> ;
+    erfgoed:dateBetekend "2019-02-21"^^xsd:date ;
+    erfgoed:dateSigned "2019-02-21"^^xsd:date ;
+    erfgoed:precedes <https://id.erfgoed.net/besluiten/14850> ;
+    erfgoed:rechtsgevolgen <https://id.erfgoed.net/thesauri/besluittypes/12> .
+
+<http://www.ejustice.just.fgov.be/cgi/summary_body.pl?language=nl&pub_date=2019-03-20> a bibo:Issue ;
+    dcterms:isPartOf <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b7> ;
+    dcterms:issued "2019-03-20"^^xsd:date ;
+    bibo:issue 62 ;
+    bibo:volume 189 .
+
+<https://besluiten.onroerenderfgoed.be/measure/0> a ext:erfgoedProtectiveMeasure,
+        oa:SpecificResource ;
+    ext:erfgoedhasMeasureType <http://mu.semte.ch/vocabularies/ext/maatregeltypes/1> ;
+    oa:hasSelector <https://besluiten.onroerenderfgoed.be/text-fragment-selector/0> ;
+    oa:hasSource <https://besluiten.onroerenderfgoed.be/besluiten/14767/bestanden/23878> .
+
+<https://besluiten.onroerenderfgoed.be/text-fragment-selector/0> a oa:TextQuoteSelector ;
+    oa:exact "het plaatsen, slopen, verbouwen of heropbouwen van een constructie" ;
+    oa:prefix "NaN"^^xsd:double ;
+    oa:suffix "NaN"^^xsd:double .
+
+<https://id.erfgoed.net/besluiten/14767/bestanden/23877> a bibo:Document,
+        erfgoed:Attachment ;
+    dcterms:extent <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b8> ;
+    dcterms:format <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b9> ;
+    dcterms:title "14767_behandelingadviezen.pdf" ;
+    dcterms:type <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b10> .
+
+<https://id.erfgoed.net/besluiten/14767/bestanden/23878> a bibo:LegalDocument,
+        erfgoed:Attachment ;
+    dcterms:extent <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b11> ;
+    dcterms:format <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b12> ;
+    dcterms:title "14767.pdf" ;
+    dcterms:type <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b13> .
+
+<https://id.erfgoed.net/besluiten/14767/bestanden/23879> a bibo:Document,
+        erfgoed:Attachment ;
+    dcterms:extent <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b14> ;
+    dcterms:format <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b15> ;
+    dcterms:title "14767_plan.pdf" ;
+    dcterms:type <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b16> .
+
+<https://id.erfgoed.net/besluiten/14767/bestanden/23880> a bibo:Document,
+        erfgoed:Attachment ;
+    dcterms:extent <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b17> ;
+    dcterms:format <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b18> ;
+    dcterms:title "14767_fotoregistratie.pdf" ;
+    dcterms:type <https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b19> .
+
+<https://inventaris.onroerenderfgoed.be/aanduidingsobjecten/113477> a erfgoed:Aanduidingsobject ;
+    erfgoed:aanduid_aanduidingstype <https://id.erfgoed.net/thesauri/aanduidingstypes/1> .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b1> a foaf:Person ;
+    dcterms:identifier "4" ;
+    foaf:name "Bourgeois, Geert"@und .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b10> dcterms:identifier 3 ;
+    dcterms:title "Bijlage" .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b11> a dcterms:SizeOrDuration ;
+    rdfs:label "723648 B" ;
+    rdf:value 723648 .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b12> a dcterms:MediaType ;
+    rdf:value "application/pdf" .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b13> dcterms:identifier 1 ;
+    dcterms:title "Besluit" .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b14> a dcterms:SizeOrDuration ;
+    rdfs:label "784556 B" ;
+    rdf:value 784556 .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b15> a dcterms:MediaType ;
+    rdf:value "application/pdf" .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b16> dcterms:identifier 2 ;
+    dcterms:title "Plan" .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b17> a dcterms:SizeOrDuration ;
+    rdfs:label "3794981 B" ;
+    rdf:value 3794981 .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b18> a dcterms:MediaType ;
+    rdf:value "application/pdf" .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b19> dcterms:identifier 3 ;
+    dcterms:title "Bijlage" .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b2> a skos:Concept ;
+    dcterms:identifier 40000 ;
+    skos:prefLabel "Oost-Vlaanderen"@nl .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b3> a ns1:Modify ;
+    ns1:startedAtTime "2019-07-05T10:01:51.179794+02:00"^^xsd:dateTime ;
+    ns1:wasAssociatedWith "https://id.erfgoed.net/actoren/2299" .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b4> a ns1:Publish ;
+    ns1:startedAtTime "2019-02-26T13:29:16.659725+01:00"^^xsd:dateTime ;
+    ns1:wasAssociatedWith "https://id.erfgoed.net/actoren/2299" .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b5> a ns1:Create ;
+    ns1:startedAtTime "2019-02-26T13:28:44.717273+01:00"^^xsd:dateTime ;
+    ns1:wasAssociatedWith "https://id.erfgoed.net/actoren/2299" .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b7> a bibo:Periodical ;
+    dcterms:title "Belgisch Staatsblad"@nl .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b8> a dcterms:SizeOrDuration ;
+    rdfs:label "316117 B" ;
+    rdf:value 316117 .
+
+<https://rdflib.github.io/.well-known/genid/rdflib/n7e74f273b6434b5f95a84defa96ea1a8b9> a dcterms:MediaType ;
+    rdf:value "application/pdf" .
+
+<https://besluiten.onroerenderfgoed.be/annotation/0> a oa:Annotation ;
+    oa:hasTarget <https://besluiten.onroerenderfgoed.be/measure/0> .
+
