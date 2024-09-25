@@ -62,8 +62,8 @@ services:
     volumes:
       - "./data/ollama:/root/.ollama"
   pipeline:
-    image: lblod/ai-hackaton-w1-g2-pipeline-service:0.0.1-test
+    image: lblod/ai-hackaton-w1-g2-pipeline-service:0.0.1
     environment:
       MODE: "development" # a quirk
     links:
-      - triplestore:database
+      - triplestore:database # TODO: fix later
