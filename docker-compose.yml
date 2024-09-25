@@ -62,7 +62,7 @@ services:
     volumes:
       - "./data/ollama:/root/.ollama"
   pipeline:
-    image: lblod/ai-hackaton-w1-g2-pipeline-service:0.0.2
+    image: lblod/ai-hackaton-w1-g2-pipeline-service:0.0.3
     environment:
       MODE: "development" # a quirk
     links:
