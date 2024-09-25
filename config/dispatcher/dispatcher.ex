@@ -49,6 +49,10 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/files/"
   end
 
+  match "/pipeline/*path" do
+    Proxy.forward conn, path, "http://pipeline/"
+  end
+
   match "/sparql/*path" do
     Proxy.forward conn, path, "http://triplestore:8890/sparql/"
   end
