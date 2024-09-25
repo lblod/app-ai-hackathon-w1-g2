@@ -2,6 +2,7 @@ services:
   identifier:
     image: semtech/mu-identifier:1.10.3
     environment:
+      DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER: "*"
       SESSION_COOKIE_SECURE: "on"
     labels:
       - "logging=true"
@@ -60,3 +61,9 @@ services:
     image: ollama/ollama:0.3.11
     volumes:
       - "./data/ollama:/root/.ollama"
+  pipeline:
+    image: lblod/ai-hackaton-w1-g2-pipeline-service:0.0.1-test
+    environment:
+      MODE: "development" # a quirk
+    links:
+      - triplestore:database
