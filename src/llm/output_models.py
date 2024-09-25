@@ -7,14 +7,11 @@ from pydantic import BaseModel, Field
 class Action(BaseModel):
     """"Information about the extracted action"""
     action: Optional[str] = Field(description="The complete text of an action")
-
-
-class AllowedAction(Action):
-    permit_needed: Optional[bool] = Field(description="Is a permit needed for this action")
+    permit_needed: Optional[bool] = Field(description="Is a permit needed for this action", default=True)
 
 
 class Actions(BaseModel):
-    allowed_action_list: Optional[List[AllowedAction]]
+    allowed_action_list: Optional[List[Action]]
     not_allowed_action_list: Optional[List[Action]]
 
 
