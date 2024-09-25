@@ -21,6 +21,30 @@ defmodule Dispatcher do
   # Run `docker-compose restart dispatcher` after updating
   # this file.
 
+  get "/besluiten/*path" do
+    Proxy.forward conn, path, "http://resource/besluiten/"
+  end
+
+  get "/concepts/*path" do
+    Proxy.forward conn, path, "http://resource/concepts/"
+  end
+
+  get "/concept-schemes/*path" do
+    Proxy.forward conn, path, "http://resource/concept-schemes/"
+  end
+
+  get "/files/:id/download" do
+    Proxy.forward conn, [], "http://file/files/" <> id <> "/download"
+  end
+
+  get "/files/*path" do
+    forward conn, path, "http://resource/files/"
+  end
+
+  match "/sparql/*path" do
+    Proxy.forward conn, path, "http://triplestore:8890/sparql/"
+  end
+
   match "/*path", @html do
     Proxy.forward conn, path, "http://frontend/"
   end
