@@ -11,6 +11,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mu: <http://mu.semte.ch/vocabularies/core/> .
 
 <http://mu.semte.ch/vocabularies/ext/maatregeltypes/measureTypes> a skos:ConceptScheme ;
     skos:hasTopConcept <http://mu.semte.ch/vocabularies/ext/maatregeltypes/1>,
@@ -25,6 +26,7 @@
         <https://id.erfgoed.net/besluiten/14767/bestanden/23879>,
         <https://id.erfgoed.net/besluiten/14767/bestanden/23880> ;
     dcterms:identifier 14767 ;
+    mu:uuid "14767";
     dcterms:publisher <http://example.org/.well-known/genid/2> ;
     dcterms:source <http://www.ejustice.just.fgov.be/cgi/summary_body.pl?language=nl&pub_date=2019-03-20> ;
     dcterms:spatial <http://example.org/.well-known/genid/4> ;

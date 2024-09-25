@@ -3,7 +3,7 @@
 (setf *include-count-in-paginated-responses* t)
 (setf *supply-cache-headers-p* t)
 (setf sparql:*experimental-no-application-graph-for-sudo-select-queries* t)
-(setf *cache-model-properties-p* t)
+;;(setf *cache-model-properties-p* t)
 (setf mu-support::*use-custom-boolean-type-p* nil)
 (setq *cache-count-queries-p* t)
 (setf sparql:*query-log-types* nil) ;; hint: use app-http-logger for logging queries instead, all is '(:default :update-group :update :query :ask)
@@ -72,11 +72,11 @@
   :properties `((:beschrijving :string ,(s-prefix "eli:description"))
                 (:citeeropschrift :string ,(s-prefix "eli:title_short"))
                 (:motivering :language-string ,(s-prefix "besluit:motivering"))
-                (:publicatiedatum :date ,(s-prefix "eli:date_publication"))
+                (:publicatiedatum :date ,(s-prefix "oent:dateBetekend"))
                 (:inhoud :string ,(s-prefix "prov:value"))
                 (:taal :url ,(s-prefix "eli:language"))
                 (:parts :uri-set ,(s-prefix "eli:related_to"))
-                (:titel :string ,(s-prefix "eli:title"))
+                (:titel :string ,(s-prefix "dct:title"))
                 (:score :float ,(s-prefix "nao:score")))
   ;; :has-one `((behandeling-van-agendapunt :via ,(s-prefix "prov:generated")
   ;;                                        :inverse t
@@ -89,7 +89,33 @@
   :resource-base (s-url "http://data.lblod.info/id/besluiten/")
   :features '(include-uri)
   :on-path "besluiten"
-)
+  )
+
+(define-resource job ()
+  :class (s-prefix "cogs:Job")
+  :properties `((:created :date ,(s-prefix "dct:created"))
+                (:operation :url ,(s-prefix "task:operation"))
+                (:status :string ,(s-prefix "adms:status")))
+  :has-one `((aanduidingsobject :via ,(s-prefix "dct:source")
+                                         :as "source"))
+  :resource-base (s-url "http://data.lblod.info/id/hackaton-jobs/")
+  :features '(include-uri)
+  :on-path "jobs"
+  )
+
+(define-resource aanduidingsobject ()
+  :class (s-prefix "oe:Aanduidingsobject")
+  :properties `((:created :date ,(s-prefix "dct:created")))
+  ;; :has-one `((aanduidingsobject :via ,(s-prefix "dct:source")
+  ;;                                        :inverse t
+  ;;                                        :as "source"))
+  :has-many `((besluit :via ,(s-prefix "oe:heeftBesluit")
+                                  :as "besluiten"))
+  :resource-base (s-url "http://data.lblod.info/id/aanuidingsobjecten/")
+  :features '(include-uri)
+  :on-path "aanduidingsobjecten"
+  )
+
 
 
 (read-domain-file "domain.json")

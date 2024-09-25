@@ -21,6 +21,14 @@ defmodule Dispatcher do
   # Run `docker-compose restart dispatcher` after updating
   # this file.
 
+  get "/jobs/*path" do
+    Proxy.forward conn, path, "http://resource/jobs/"
+  end
+
+  get "/aanduidingsobjecten/*path" do
+    Proxy.forward conn, path, "http://resource/aanduidingsobjecten/"
+  end
+
   get "/besluiten/*path" do
     Proxy.forward conn, path, "http://resource/besluiten/"
   end

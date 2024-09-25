@@ -1,0 +1,27 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX cogs: <http://vocab.deri.ie/cogs#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX task: <http://redpencil.data.gift/vocabularies/tasks/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+  <http://data.lblod.info/hackton/g2/jobs/083c3123-91fd-4ebe-a161-22ecf3fd3ed2> a cogs:Job;
+                 mu:uuid "083c3123-91fd-4ebe-a161-22ecf3fd3ed2";
+                 dct:created "2024-09-25T06:18:00.784922"^^xsd:dateTime ;
+                 dct:source <https://inventaris.onroerenderfgoed.be/aanduidingsobjecten/113565>;
+                 adms:status "Finished";
+                 task:operation <http://data.lblod.info/extract/toelatingsplichtigeHandelingen>.
+
+  <https://inventaris.onroerenderfgoed.be/aanduidingsobjecten/113565> a <https://inventaris.onroerenderfgoed.be/Aanduidingsobject>;
+    mu:uuid "113565";
+    <https://inventaris.onroerenderfgoed.be/heeftBesluit> <https://id.erfgoed.net/besluiten/14767>.
+
+  <https://id.erfgoed.net/besluiten/14767> a <http://data.vlaanderen.be/ns/besluit#Besluit>;
+    dcterms:title "Architectenwoning Louis Hagen" ;
+    mu:uuid "14767";
+    <https://id.erfgoed.net/vocab/ontology#dateBetekend> "2019-02-21"^^xsd:date.
+  }
+}

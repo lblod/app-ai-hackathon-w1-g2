@@ -36,7 +36,12 @@
 (add-prefix "locn" "http://www.w3.org/ns/locn#")
 (add-prefix "adres" "https://data.vlaanderen.be/ns/adres#")
 (add-prefix "lblodlg" "http://data.lblod.info/vocabularies/leidinggevenden/")
-
+(add-prefix "dct" "http://purl.org/dc/terms/")
+(add-prefix "adms" "http://www.w3.org/ns/adms#")
+(add-prefix "task" "http://redpencil.data.gift/vocabularies/tasks/")
+(add-prefix "cogs" "http://vocab.deri.ie/cogs#")
+(add-prefix "oe" "https://inventaris.onroerenderfgoed.be/")
+(add-prefix "oent" "https://id.erfgoed.net/vocab/ontology#")
 ;;;;
 ;; NOTE
 ;; docker-compose stop; docker-compose rm; docker-compose up
