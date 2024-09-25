@@ -88,7 +88,7 @@
   ;;                                 :as "publications"))
   :resource-base (s-url "http://data.lblod.info/id/besluiten/")
   :features '(include-uri)
-  :on-path "besluiten"
+  :on-path "besluit"
   )
 
 (define-resource job ()
@@ -100,7 +100,7 @@
                                          :as "source"))
   :resource-base (s-url "http://data.lblod.info/id/hackaton-jobs/")
   :features '(include-uri)
-  :on-path "jobs"
+  :on-path "job"
   )
 
 (define-resource aanduidingsobject ()
@@ -113,7 +113,7 @@
                                   :as "besluiten"))
   :resource-base (s-url "http://data.lblod.info/id/aanuidingsobjecten/")
   :features '(include-uri)
-  :on-path "aanduidingsobjecten"
+  :on-path "aanduidingsobject"
   )
 
 

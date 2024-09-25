@@ -22,15 +22,15 @@ defmodule Dispatcher do
   # this file.
 
   get "/jobs/*path" do
-    Proxy.forward conn, path, "http://resource/jobs/"
+    Proxy.forward conn, path, "http://resource/job/"
   end
 
-  get "/aanduidingsobjecten/*path" do
-    Proxy.forward conn, path, "http://resource/aanduidingsobjecten/"
+  get "/aanduidingsobjects/*path" do
+    Proxy.forward conn, path, "http://resource/aanduidingsobject/"
   end
 
-  get "/besluiten/*path" do
-    Proxy.forward conn, path, "http://resource/besluiten/"
+  get "/besluits/*path" do
+    Proxy.forward conn, path, "http://resource/besluit/"
   end
 
   get "/concepts/*path" do
